@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7faff;
+  --foreground: #171717;
+  --primary: #2170fd;
+  --text-primary: #000000;
+  --text-secondary: #0a1f44;
+  --text-tertiary: #4a5565;
+  --white: #ffffff;
+  --bg-element: #dee8ff;
+  --sidebar-bg: #F4F6FF;
+  --bg-content: #F7FAFF;
+  --fill-component-bg: #FFFFFF;
+  --button-dblue: #003D9B;
+}
+
+@theme inline {
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-textp: var(--text-primary);
+  --color-texts: var(--text-secondary);
+  --color-textt: var(--text-tertiary);
+  --color-white: var(--white);
+  --color-bgelem: var(--bg-element);
+  --color-sbg: var(--sidebar-bg);
+  --color-content: var(--bg-content);
+  --color-fbc: var(--fill-component-bg);
+  --color-button-dblue: var(--button-dblue);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+.animate-scale-in {
+  animation: scaleIn 0.25s ease-out;
+}
