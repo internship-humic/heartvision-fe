@@ -28,8 +28,8 @@ src/
 │   ├── layout.tsx                        # Root layout + AuthModal
 │   ├── patient/
 │   │   ├── dashboard/page.tsx            # Patient dashboard
-│   │   ├── detection/                    # ⭐ AI Detection Pipeline
-│   │   │   ├── page.tsx                  # Main orchestrator (5 steps)
+│   │   ├── detection/                    #  AI Detection Pipeline
+│   │   │   ├── page.tsx                  # Main  (5 steps)
 │   │   │   ├── components/
 │   │   │   │   └── DetectionStepper.tsx  # Step progress indicator
 │   │   │   └── steps/
@@ -46,7 +46,7 @@ src/
 │       ├── queue/
 │       │   ├── page.tsx                  # Verification queue
 │       │   └── [patientId]/
-│       │       ├── page.tsx              # ⭐ AI Verification Detail
+│       │       ├── page.tsx              #  AI Verification Detail
 │       │       └── result/page.tsx       # Verified result display
 │       ├── patient-history/page.tsx      # Verified scan history
 │       └── profile/page.tsx              # Doctor profile
@@ -55,12 +55,12 @@ src/
 │   ├── layouts/                          # Navbar, Sidebar, DashboardHeader
 │   └── modal/                            # EditProfile, ChangePassword, etc.
 └── utils/
-    └── api.ts                            # ⭐ Central API utility (apiFetch)
+    └── api.ts                            #  Central API utility (apiFetch)
 ```
 
 ---
 
-## ⭐ AI Implementation Guide
+##  AI Implementation Guide
 
 This section is for the **next developer** who will implement or modify the AI model integration.
 
