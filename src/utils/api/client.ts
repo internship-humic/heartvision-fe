@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ApiResponse } from "./types";
 import { getSavedSession, saveSession } from "./session";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000/api";
 
 /**
  * Helper to resolve backend filesystem paths to accessible HTTP URLs
@@ -16,7 +16,7 @@ export function getMediaUrl(path: string | undefined): string {
   const uploadsIndex = normalized.indexOf("uploads/");
   if (uploadsIndex !== -1) {
     const relativePath = normalized.substring(uploadsIndex);
-    const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api";
+    const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000/api";
     const domain = apiBase.replace(/\/api$/, "");
     return `${domain}/${relativePath}`;
   }
@@ -185,10 +185,9 @@ export function useSafeImageSrc(src: string | undefined | null, fallback = "/lan
           objectUrl = URL.createObjectURL(blob);
           setResolvedSrc(objectUrl);
         }
-      } catch (err) {
-        console.warn("SafeImage fetch failed, falling back to raw src:", err);
+      } catch {
         if (active) {
-          setResolvedSrc(cleanSrc);
+          setResolvedSrc(fallback);
         }
       }
     }
